@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(function () {
+
+            var url = "hello"
+            $.ajax({
+
+                url: url,
+                method: "POST",
+                success: function (result) {
+
+                    for (var i = 0; i < result.length; i++) {
+
+                        var user = result[i];
+                        $("#userTable").append(' <tr>\n' +
+                            '\n' +
+                            '<td>' + user.id + '</td>\n' +
+                            '<td>' + user.name + '</td>\n' +
+                            '<td>' + user.job + '</td>\n' +
+                            '</tr>')
+
+
+                    }
+
+
+                }
+
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+
+
+<table id="userTable">
+    <tr>
+
+        <td>编号</td>
+        <td>姓名</td>
+        <td>职位</td>
+    </tr>
+
+
+</table>
+
+
+</body>
+</html>
